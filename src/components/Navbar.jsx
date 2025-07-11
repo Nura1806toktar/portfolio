@@ -3,7 +3,7 @@ import { Link } from 'react-scroll';
 
 function Navbar({ language, setLanguage }) {
   const sections = [
-    { id: 'home', kk: 'Басты бет', en: 'Home' },
+
     { id: 'about', kk: 'Мен туралы', en: 'About' },
     { id: 'skills', kk: 'Дағдылар', en: 'Skills' },
     { id: 'projects', kk: '🔥 Жобалар', en: '🔥 Projects' }, // 👈 ерекше болу үшін emoji және bold
@@ -21,7 +21,7 @@ function Navbar({ language, setLanguage }) {
           duration={500}
           offset={-70}
         >
-          {language === 'kk' ? 'Менің портфолиом' : 'My Portfolio'}
+          {language === 'kk' ? 'Менің портфолиям' : 'My Portfolio'}
         </Link>
 
         <ul className="navbar-nav d-flex flex-row align-items-center gap-3">

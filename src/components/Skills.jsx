@@ -24,14 +24,22 @@ const skills = [
 { name: { kk: 'EmailJS', en: 'EmailJS' }, icon: <MdEmail size={40} />, color: '#ec4899' },
 ];
 
+const tools = [
+{ name: { kk: 'Laragon', en: 'Laragon' }, color: '#38bdf8' },
+{ name: { kk: 'Open Server', en: 'Open Server' }, color: '#f97316' },
+{ name: { kk: 'Lavable', en: 'Lavable' }, color: '#8b5cf6' },
+];
+
 function Skills() {
-const [lang, setLang] = useState('kk'); // 'kk' немесе 'en'
+const [lang, setLang] = useState('kk');
 
 return (
 <section className="py-5" id="skills" style={{ backgroundColor: '#f9fafb' }}>
 <div className="container">
 
-
+javascript
+Копировать
+Редактировать
     {/* Тіл ауыстырғыш */}
     <div className="text-end mb-3">
       <button
@@ -50,19 +58,19 @@ return (
       </button>
     </div>
 
-    {/* Тақырып */}
+    {/* Негізгі тақырып */}
     <h2 className="text-center mb-5">
       {lang === 'kk' ? '🛠 Менің Навыктарым' : '🛠 My Skills'}
     </h2>
 
-    {/* Навыктар Grid */}
+    {/* Skills Grid */}
     <div className="row justify-content-center">
       {skills.map((skill, index) => (
         <motion.div
           key={index}
           className="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 d-flex justify-content-center"
           initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: index * 0.1, duration: 0.5 }}
         >
           <div
@@ -80,8 +88,43 @@ return (
             }}
           >
             <div style={{ color: skill.color }}>{skill.icon}</div>
-            <div className="mt-2" style={{ fontSize: '0.9rem' }}>
+            <div className="mt-2" style={{ fontSize: '0.85rem' }}>
               {skill.name[lang]}
+            </div>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+
+    {/* Tools бөлім */}
+    <h4 className="text-center mt-5 mb-3">
+      {lang === 'kk' ? '🧰 Жұмыс Істеу Құралдарым' : '🧰 My Dev Tools'}
+    </h4>
+
+    <div className="row justify-content-center">
+      {tools.map((tool, index) => (
+        <motion.div
+          key={index}
+          className="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 d-flex justify-content-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: index * 0.1 + 0.5, duration: 0.5 }}
+        >
+          <div
+            className="text-center p-3 shadow rounded"
+            style={{
+              backgroundColor: '#ffffff',
+              borderBottom: `5px solid ${tool.color}`,
+              width: '100px',
+              height: '80px',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <div className="mt-1" style={{ fontSize: '0.85rem', color: '#333' }}>
+              {tool.name[lang]}
             </div>
           </div>
         </motion.div>
@@ -90,8 +133,8 @@ return (
 
     <p className="text-center text-muted mt-3">
       {lang === 'kk'
-        ? '🚀 Мен әрқашан жаңа технология үйренуге құштармын!'
-        : '🚀 I am always eager to learn new technologies!'}
+        ? '🚀 Мен әрқашан жаңа технология мен құрал үйренуге дайынмын!'
+        : '🚀 Always ready to explore new technologies and tools!'}
     </p>
   </div>
 </section>
