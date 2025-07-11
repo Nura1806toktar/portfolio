@@ -37,9 +37,7 @@ return (
 <section className="py-5" id="skills" style={{ backgroundColor: '#f9fafb' }}>
 <div className="container">
 
-javascript
-Копировать
-Редактировать
+
     {/* Тіл ауыстырғыш */}
     <div className="text-end mb-3">
       <button
