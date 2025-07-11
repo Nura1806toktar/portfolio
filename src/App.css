@@ -1,6 +1,14 @@
 .App {
   text-align: center;
 }
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
 
 .App-logo {
   height: 40vmin;
